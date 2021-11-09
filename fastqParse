@@ -1,0 +1,19 @@
+class FastqString (str):
+
+    def parse(self):
+        self = self.strip('@')
+        self = self.rsplit(":")
+        print("Instrument = ", self[0])
+        print("Run ID = ", self[1])
+        print("Flow Cell ID = ", self[2])
+        print("Flow Cell Lane = ", self[3])
+        print("Tile Number = ", self[4])
+        print("X-coord = ", self[5])
+        print("Y-coord = ", self[6])
+
+
+def main():
+ fastq = input("enter the FASTQ sequence ")
+ print("The FASTQ sequence: ", fastq, "\n")
+ FastqString.parse(fastq)
+main()
